@@ -198,6 +198,7 @@ body {
     justify-content: center;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 .game {
@@ -365,6 +366,7 @@ body {
     font-weight: 700;
     cursor: pointer;
     letter-spacing: 0.5px;
+    touch-action: manipulation;
     transition:
         transform 0.1s,
         opacity 0.2s;
@@ -631,6 +633,220 @@ body {
     100% {
         transform: translateY(108vh) translateX(5px) rotate(720deg);
         opacity: 0;
+    }
+}
+
+/* ===================== */
+/* Responsive            */
+/* ===================== */
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding: 12px 0;
+    }
+
+    .game {
+        gap: 16px;
+        padding: 20px 16px;
+        width: 100vw;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .scoreboard {
+        gap: 8px;
+    }
+
+    .score {
+        padding: 10px 6px;
+        border-radius: 12px;
+    }
+
+    .score.draws {
+        max-width: 72px;
+    }
+
+    .player-symbol {
+        font-size: 1.2rem;
+    }
+
+    .score .label {
+        font-size: 0.6rem;
+    }
+
+    .score .points {
+        font-size: 1.3rem;
+    }
+
+    .status-bar {
+        height: auto;
+        min-height: 32px;
+    }
+
+    .status {
+        font-size: 1rem;
+    }
+
+    .status.win,
+    .status.draw {
+        font-size: 1.05rem;
+    }
+
+    .board {
+        gap: 8px;
+    }
+
+    .cell {
+        font-size: 2.4rem;
+        border-radius: 12px;
+    }
+
+    .actions {
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 12px 0;
+        font-size: 0.88rem;
+        flex: 1;
+        max-width: 160px;
+        border-radius: 10px;
+    }
+
+    /* Win overlay */
+    .win-announcement {
+        padding: 28px 24px 24px;
+        border-radius: 24px;
+        gap: 4px;
+        width: 90vw;
+    }
+
+    .win-trophy {
+        font-size: 3.8rem;
+    }
+
+    .win-player {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+        margin-top: 8px;
+    }
+
+    .win-hint {
+        margin-top: 16px;
+        font-size: 0.72rem;
+        letter-spacing: 2px;
+    }
+}
+
+/* Very small phones (≤ 360px) */
+@media (max-width: 360px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .cell {
+        font-size: 2rem;
+        border-radius: 10px;
+    }
+
+    .score .points {
+        font-size: 1.1rem;
+    }
+
+    .player-symbol {
+        font-size: 1rem;
+    }
+
+    .win-trophy {
+        font-size: 3rem;
+    }
+
+    .win-player {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+}
+
+/* Landscape on mobile (short screens) */
+@media (max-height: 600px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        padding: 8px 0;
+    }
+
+    .game {
+        gap: 10px;
+        padding: 12px 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100vw;
+        max-width: 100vw;
+    }
+
+    .title {
+        width: 100%;
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: -4px;
+    }
+
+    .scoreboard {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .status-bar {
+        width: 100%;
+        max-width: 420px;
+        text-align: center;
+        height: auto;
+    }
+
+    .board {
+        max-width: 260px;
+        gap: 6px;
+    }
+
+    .cell {
+        font-size: 2rem;
+        border-radius: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    .win-announcement {
+        padding: 20px 32px 18px;
+        gap: 2px;
+    }
+
+    .win-trophy {
+        font-size: 2.8rem;
+    }
+
+    .win-player {
+        font-size: 1.2rem;
+        margin-top: 4px;
+    }
+
+    .win-hint {
+        margin-top: 10px;
     }
 }
 </style>
